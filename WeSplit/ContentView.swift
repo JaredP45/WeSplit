@@ -13,7 +13,7 @@ struct ContentView: View {
     @State private var numberOfPeople = ""
     @State private var tipPercentage = 2
 
-    let tipPercentages = [10, 15, 20, 25, 0]
+    let tipPercentages = [5, 10, 15, 0]
 
     
     var totalPerPerson: Double {
@@ -63,7 +63,6 @@ struct ContentView: View {
                     Text("$\(totalPerPerson, specifier: "%.2f")")
                 }
                 
-                // FIXME
                 Section(header: Text("Total amount plus tip")) {
                     Text("$\(checkTotal, specifier: "%.2f")")
                 }
