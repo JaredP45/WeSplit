@@ -1,9 +1,9 @@
 //
 //  ContentView.swift
-//  WeSplit
+//  Check Splitter
 //
 //  Created by Jared on 3/10/21.
-//  Copyright © 2021 IN185 BS. All rights reserved.
+//  Copyright © 2021 All rights reserved.
 //
 
 import SwiftUI
@@ -13,11 +13,11 @@ struct ContentView: View {
     @State private var numberOfPeople = ""
     @State private var tipPercentage = 2
 
-    let tipPercentages = [10, 15, 20, 25, 0]
+    let tipPercentages = [0, 5, 10, 15, 20]
 
     
     var totalPerPerson: Double {
-        let peopleCount = Double(numberOfPeople) ?? 0
+        let peopleCount = Double(numberOfPeople) ?? 1
         let tipSelection = Double(tipPercentages[tipPercentage])
         let orderAmount = Double(checkAmount) ?? 0
 
@@ -63,12 +63,11 @@ struct ContentView: View {
                     Text("$\(totalPerPerson, specifier: "%.2f")")
                 }
                 
-                // FIXME
                 Section(header: Text("Total amount plus tip")) {
                     Text("$\(checkTotal, specifier: "%.2f")")
                 }
             }
-            .navigationBarTitle("WeSplit")
+            .navigationBarTitle("Check Splitter")
         }
     }
 }
